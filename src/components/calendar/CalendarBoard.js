@@ -73,7 +73,9 @@ const CalendarBoard = () => {
   const bodyScrollRef = useRef(null);
 
   // Current date
-  const safeBookings = Array.isArray(bookings) ? bookings : [];
+  const safeBookings = useMemo(() => {
+    return Array.isArray(bookings) ? bookings : [];
+  }, [bookings]);
   const today = new Date();
   const currentDate = today.toISOString().split("T")[0];
 

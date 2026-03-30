@@ -234,7 +234,7 @@ const BookingDetailsDrawer = ({
     setMode(booking?._isNew ? "create" : "view");
     setShowCancelModal(false);
     setActionType("cancel-normal");
-  }, [booking?._isNew, booking?.id, booking?.booking_id, booking?.booking_item_id]);
+  }, [booking,booking?._isNew, booking?.id, booking?.booking_id, booking?.booking_item_id]);
 
   // Resolve therapist info for current booking
   const therapist = useMemo(
